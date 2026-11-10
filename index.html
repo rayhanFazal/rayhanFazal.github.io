@@ -1,10 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rayhan Fazal</title>
+<meta name="description" content="Rayhan Fazal: records and data administration, data entry and data accuracy. Milton, Ontario. Available immediately.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 :root{
   --paper:#F6F7FA; --ink:#1B2233; --muted:#5B6478; --rule:#D8DDE7;
-  --navy:#1F3864; --side:#1F3864; --side-ink:#E4EAF5; --side-muted:#9FB3D8; --side-rule:rgba(255,255,255,.16);
+  --side:#1F3864; --side-ink:#E4EAF5; --side-muted:#9FB3D8; --side-rule:rgba(255,255,255,.16);
   --accent:#1F3864; --accent-soft:#E7EDF7; --link:#1F3864;
   --display:"Newsreader",Georgia,"Times New Roman",serif;
   --sans:"Public Sans","Helvetica Neue",Arial,sans-serif;
@@ -28,107 +34,186 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 a:hover{text-decoration-thickness:2px}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 
 .shell{display:grid;grid-template-columns:320px minmax(0,1fr);min-height:100vh}
+.side{grid-column:1;grid-row:1}
+.main{grid-column:2;grid-row:1}
 
-/* ---------- sidebar ---------- */
 .side{background:var(--side);color:var(--side-ink);position:sticky;top:0;height:100vh;overflow-y:auto;padding:44px 32px 40px 36px;scrollbar-width:thin;scrollbar-color:var(--side-rule) transparent}
 .side a{color:var(--side-ink);text-decoration:none;border-bottom:1px solid var(--side-rule)}
 .side a:hover{border-bottom-color:var(--side-ink)}
-.side h2{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--side-muted);margin:36px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--side-rule)}
-.photo{width:128px;height:128px;border-radius:50%;object-fit:cover;display:block;margin:0 0 26px;border:3px solid var(--side-rule)}
-.photo+h2{margin-top:0}
+.side h2{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--side-muted);margin:36px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--side-rule)}
+.side h2:first-child{margin-top:0}
 .contact{display:grid;gap:12px;margin:0;padding:0}
 .contact div{display:grid;gap:2px}
 .contact dt{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--side-muted)}
 .contact dd{margin:0;font-size:14.5px;overflow-wrap:anywhere}
 .edu{display:grid;gap:3px}
 .edu .degree{font-weight:600;font-size:15px;line-height:1.35}
-.edu .school,.edu .when{font-size:13.5px;color:var(--side-muted)}
+.edu .school,.edu .when,.edu .note{font-size:13.5px;color:var(--side-muted)}
 .edu .when{font-family:var(--mono);font-size:12.5px}
 .skills{display:grid;gap:14px;margin:0;padding:0}
 .skills dt{font-weight:600;font-size:14px;color:var(--side-ink);margin-bottom:2px}
 .skills dd{margin:0;font-size:13.5px;line-height:1.5;color:var(--side-muted)}
-.certs{margin:0;padding:0;list-style:none;display:grid;gap:10px}
-.certs li{font-size:13.5px;line-height:1.45;padding-left:14px;position:relative;color:var(--side-ink)}
-.certs li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:1px;background:var(--side-muted)}
-.certs .status{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--side-muted);margin-left:4px}
-.projects dt a{color:var(--side-ink);border-bottom:1px solid var(--side-rule)}
+.plain{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.plain li{font-size:13.5px;line-height:1.45}
 .side-foot{margin-top:40px;font-size:12px;color:var(--side-muted);font-family:var(--mono)}
 
-/* ---------- main ---------- */
 .main{padding:64px 72px 96px;max-width:860px}
-.name{font-family:var(--display);font-size:clamp(40px,5.2vw,58px);font-weight:500;line-height:1;letter-spacing:-.015em;margin:0;text-wrap:balance;color:var(--ink)}
+.name{font-family:var(--display);font-size:clamp(40px,5.2vw,58px);font-weight:500;line-height:1;letter-spacing:-.015em;margin:0;color:var(--ink)}
 .headline{margin:14px 0 0;font-size:19px;font-weight:600;color:var(--accent)}
-.tagline{margin:4px 0 0;font-size:15px;color:var(--muted);letter-spacing:.01em}
+.tagline{margin:4px 0 0;font-size:15px;color:var(--muted)}
 .tagline span{padding:0 .45em}
 .tagline span:first-child{padding-left:0}
 .availability{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:6px 12px 6px 10px;border:1px solid var(--rule);border-radius:999px;font-size:13px;color:var(--muted);background:var(--accent-soft)}
-.availability i{width:8px;height:8px;border-radius:50%;background:#2E9E6B;display:inline-block}
+.availability i{width:8px;height:8px;border-radius:50%;background:#2E9E6B;display:inline-block;flex:none}
 
 .main h2{font-family:var(--display);font-size:26px;font-weight:500;letter-spacing:-.01em;margin:56px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--rule);color:var(--ink)}
 .summary{font-size:17.5px;line-height:1.6;max-width:62ch;margin:0}
-.summary strong{font-weight:600;color:var(--ink)}
+.summary strong{font-weight:600}
+
+.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0;padding:0;list-style:none}
+.proof li{border:1px solid var(--rule);border-radius:6px;padding:16px 16px 14px;background:var(--accent-soft)}
+.proof b{display:block;font-family:var(--display);font-size:30px;font-weight:500;line-height:1.1;color:var(--accent)}
+.proof span{display:block;margin-top:6px;font-size:14px;line-height:1.45;color:var(--ink)}
 
 .jobs{display:grid;gap:40px}
 .job{display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px 28px;align-items:start}
-.job .when{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:5px;font-variant-numeric:tabular-nums;line-height:1.5}
+.job .when{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:5px;line-height:1.5}
 .job .when .loc{display:block;font-family:var(--sans);font-size:13px;margin-top:4px}
-.job h3{margin:0;font-size:19px;font-weight:600;line-height:1.3;color:var(--ink)}
+.job h3{margin:0;font-size:19px;font-weight:600;line-height:1.3}
 .job .org{font-size:15px;color:var(--muted);margin:2px 0 10px}
 .job ul{margin:0;padding-left:18px;max-width:64ch;display:grid;gap:7px}
 .job li{font-size:15.5px;line-height:1.5}
 .job li::marker{color:var(--accent)}
-.job .body{grid-column:2}
+
+.pcard{padding:18px 0;border-bottom:1px solid var(--rule)}
+.pcard:last-child{border-bottom:0}
+.pcard h3{margin:0;font-size:18px;font-weight:600}
+.pcard .stack{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:4px 0 8px}
+.pcard p{margin:0;font-size:15px;line-height:1.55;max-width:66ch}
+.pcard .links{margin-top:8px;font-size:13.5px}
 
 .main-foot{margin-top:72px;padding-top:20px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 24px}
 
-/* ---------- responsive ---------- */
 @media (max-width:900px){
   .shell{grid-template-columns:1fr}
-  .side{position:static;height:auto;overflow:visible;padding:32px 24px}
+  .side,.main{grid-column:1;grid-row:auto}
+  .side{position:static;height:auto;overflow:visible;padding:32px 16px}
   .side h2{margin-top:28px}
-  .main{padding:40px 24px 64px}
+  .main{padding:40px 16px 64px}
   .job{grid-template-columns:1fr;gap:4px}
   .job .when{padding-top:0}
   .job .when .loc{display:inline;margin:0}
   .job .when .loc::before{content:" · "}
-  .job .body{grid-column:1}
   .main h2{margin-top:44px}
+  .proof{grid-template-columns:1fr}
 }
 @media print{
   .shell{grid-template-columns:1fr}
-  .side{position:static;height:auto;overflow:visible;background:#fff;color:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .side,.main{grid-column:1;grid-row:auto}
+  .side{position:static;height:auto;overflow:visible;background:#fff;color:#000}
   .availability{display:none}
 }
-
-.case{display:grid;gap:8px;padding:18px 0;border-bottom:1px solid var(--rule)}
-.case:last-child{border-bottom:0}
-.case h3{margin:0;font-size:18px;font-weight:600;line-height:1.3}
-.case .meta{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
-.case dl{margin:6px 0 0;display:grid;grid-template-columns:88px minmax(0,1fr);gap:6px 18px}
-.case dt{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:3px}
-.case dd{margin:0;font-size:15px;line-height:1.55;max-width:66ch}
-.pcard{padding:18px 0;border-bottom:1px solid var(--rule)}
-.pcard:last-child{border-bottom:0}
-.pcard h3{margin:0;font-size:18px;font-weight:600}
-.pcard h3 a{text-decoration:none;border-bottom:1px solid var(--rule)}
-.pcard .stack{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:4px 0 8px}
-.pcard ul{margin:0;padding-left:18px;max-width:66ch;display:grid;gap:6px}
-.pcard li{font-size:15px;line-height:1.55}
-.pcard .links{margin-top:8px;font-size:13.5px}
-@media (max-width:900px){.case dl{grid-template-columns:1fr;gap:2px}}
 </style>
-
+</head>
+<body>
 <div class="shell">
-  <aside class="side" aria-label="Contact, education, skills and certifications">
+  <main class="main" id="top">
+    <h1 class="name">Rayhan Fazal</h1>
+    <p class="headline">Records and Data Administration</p>
+    <p class="tagline"><span>Data Entry</span>·<span>Data Accuracy</span>·<span>Customer and Staff Support</span></p>
+    <div class="availability"><i aria-hidden="true"></i>Available immediately for data entry, records, order entry and administration roles, any shift</div>
+
+    <h2>Summary</h2>
+    <p class="summary">Records and data administrator and Computer Science graduate (University of Toronto) who keeps records accurate at high volume. Cleaned, de-duplicated and migrated <strong>6,000+ client records</strong> into a new CRM in 5 days, checking every batch before go-live. Served <strong>about 1,000 voters</strong> over four 12-hour days as the only Deputy Returning Officer at a federal election advance poll. Writes step-by-step guides so problems get solved once. Based in Milton with a car.</p>
+
+    <h2>At a glance</h2>
+    <ul class="proof">
+      <li><b>6,000+</b><span>records cleaned, de-duplicated and migrated in 5 days, every batch checked before go-live</span></li>
+      <li><b>~1,000</b><span>voters served over 4 back-to-back 12-hour days as the only Deputy Returning Officer at the station</span></li>
+      <li><b>10</b><span>office staff supported as first point of contact, with every fix documented</span></li>
+    </ul>
+
+    <h2>Experience</h2>
+    <div class="jobs">
+      <article class="job">
+        <div class="when">Dec 2025 – Aug 2026<span class="loc">Remote · contract</span></div>
+        <div><h3>IT and Business Systems Specialist</h3><div class="org">Lexaltico LLP · contract completed</div><ul>
+          <li>Cleaned, de-duplicated and migrated 6,000+ contact, company and group records from spreadsheets and email into Zoho CRM in 5 days, checking every batch with the lawyers before go-live.</li>
+          <li>When a batch didn't match, flagged the mismatched records, confirmed each one with the lawyers on a call, and corrected them before go-live.</li>
+          <li>Entered and updated confidential client records, keeping data for ~3,000 contacts current and accurate.</li>
+          <li>First point of contact for 10 staff for Outlook, Microsoft 365, Excel and phone issues; documented every resolved issue in an internal knowledge base.</li>
+          <li>Wrote a one-page fix guide so staff resolved a recurring software lockout themselves; trained the customer-service representative on accurate CRM data entry.</li>
+        </ul></div>
+      </article>
+      <article class="job">
+        <div class="when">Sept 2025 – July 2026<span class="loc">Milton, ON · part-time</span></div>
+        <div><h3>Mathematics Tutor</h3><div class="org">Kumon · centre closed July 2026</div><ul>
+          <li>Tutored, checked and marked work for 10–20 high-school students in person and online.</li>
+          <li>Shared progress updates with parents; escalation point for problems other tutors couldn't solve.</li>
+          <li>Replaced paper attendance and progress tracking with one spreadsheet that the director adopted as the standard for ~10 staff.</li>
+        </ul></div>
+      </article>
+      <article class="job">
+        <div class="when">April 2025<span class="loc">Burlington, ON · election period</span></div>
+        <div><h3>Deputy Returning Officer</h3><div class="org">Elections Canada · federal election, 4 advance-poll days</div><ul>
+          <li>Served about 1,000 voters over 4 back-to-back 12-hour days as the only Deputy Returning Officer at the station, after completing Elections Canada training.</li>
+          <li>Checked each voter against the list of electors, issued ballots and recorded voters in the poll book; opened and closed the poll each day, handled spoiled ballots and sealed ballot boxes.</li>
+          <li>Helped voters who arrived without the right ID understand their options and complete the steps so they could still vote.</li>
+          <li>Counted ballots at close and assisted the returning officer in reconciling them against the poll records.</li>
+        </ul></div>
+      </article>
+      <article class="job">
+        <div class="when">Sept 2024 – Sept 2025<span class="loc">Remote · freelance</span></div>
+        <div><h3>Freelance QA Tester</h3><div class="org">uTest</div><ul>
+          <li>Completed ~24 test cycles on real devices, logging each defect with exact steps and evidence.</li>
+          <li>Reported each issue with screenshots so developers could reproduce it without follow-up questions.</li>
+        </ul></div>
+      </article>
+      <article class="job">
+        <div class="when">May 2022 – July 2022<span class="loc">Toronto, ON</span></div>
+        <div><h3>Software Engineering Intern</h3><div class="org">Overbond</div><ul>
+          <li>Automated twice-weekly financial reports for the finance team and CEO, replacing ~3 hours/week of manual work.</li>
+          <li>Wrote 5–10 internal guides used to onboard new staff.</li>
+        </ul></div>
+      </article>
+    </div>
+
+    <!-- WORK SAMPLES: uncomment this block only after you have rebuilt the Excel sample yourself,
+         and upload Vendor_Master_Data_Cleanup_Sample.xlsx to the repo next to this file.
+    <h2>Work samples</h2>
+    <article class="pcard">
+      <h3>Vendor master data cleanup (Excel)</h3>
+      <div class="stack">Excel · TRIM · INDEX/MATCH · COUNTIF · data validation</div>
+      <p>200 vendor records from an old system, cleaned for loading into an ERP: formatting standardized against a table of approved values, 14 duplicates merged, 27 records with missing or invalid details put on hold with the reason, every decision logged, and a check that the clean list ties back to the source. Fictional data.</p>
+      <div class="links"><a href="Vendor_Master_Data_Cleanup_Sample.xlsx" download>Download the workbook (.xlsx)</a></div>
+    </article>
+    -->
+
+    <h2>Project</h2>
+    <article class="pcard">
+      <h3>CRM data clean-up tool</h3>
+      <div class="stack">Python</div>
+      <p>Standardizes and checks contact records against defined rules and removes duplicates. Every rejected or merged record is logged with a reason, so nothing is dropped without a record of why.</p>
+      <div class="links"><a href="https://github.com/rayhanFazal/crm-migration-toolkit" target="_blank" rel="noopener">Source on GitHub</a></div>
+    </article>
+
+    <div class="main-foot">
+      <span>Rayhan Fazal · Milton, ON</span>
+      <span><a href="mailto:rayhanfaz7@gmail.com">rayhanfaz7@gmail.com</a></span>
+      <span><a href="https://linkedin.com/in/rayhan-fazal" target="_blank" rel="noopener">LinkedIn</a></span>
+    </div>
+  </main>
+
+  <aside class="side" aria-label="Contact, education and skills">
     <h2>Contact</h2>
     <dl class="contact">
       <div><dt>Email</dt><dd><a href="mailto:rayhanfaz7@gmail.com">rayhanfaz7@gmail.com</a></dd></div>
       <div><dt>LinkedIn</dt><dd><a href="https://linkedin.com/in/rayhan-fazal" target="_blank" rel="noopener">linkedin.com/in/rayhan-fazal</a></dd></div>
-      <div><dt>GitHub</dt><dd><a href="https://github.com/rayhanFazal" target="_blank" rel="noopener">github.com/rayhanFazal</a></dd></div>
-      <div><dt>Location</dt><dd>Toronto, ON · open to remote, hybrid, on-site or relocation</dd></div>
+      <div><dt>Location</dt><dd>Milton, ON · own car · open to relocating anywhere in Canada</dd></div>
+      <div><dt>Availability</dt><dd>Immediately · any shift, including evenings, nights and weekends</dd></div>
     </dl>
 
     <h2>Education</h2>
@@ -136,24 +221,29 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <div class="degree">Honours BSc, Computer Science</div>
       <div class="school">University of Toronto Mississauga</div>
       <div class="when">Sept 2019 – June 2024</div>
+      <div class="note">Calculus I–III, Linear Algebra I</div>
     </div>
 
     <h2>Skills</h2>
     <dl class="skills">
-      <div><dt>Technical</dt><dd>Microsoft 365 &amp; Outlook support · Zoho CRM (administration, Deluge scripting, Marketing Automation) · Salesforce (Trailhead) · Windows 10 / 11 · WordPress · Cloudways hosting · DNS (SPF / DKIM / DMARC) · SSH / Linux · Google Cloud (Cloud Functions, Cloud Run) · Python · SQL · Excel (advanced) · Git / GitHub · GitHub Actions (CI)</dd></div>
-      <div><dt>Support &amp; Operations</dt><dd>Technical / Help Desk Support &amp; Troubleshooting · Incident Response &amp; Root Cause Analysis · Escalation &amp; Vendor Management · Ticket &amp; Issue Tracking (Jira) · Knowledge Base &amp; Runbooks · End-User Training · User Onboarding / Offboarding &amp; Access Control · Backup &amp; Release Management (staging → production) · Data Privacy &amp; Confidentiality</dd></div>
-      <div><dt>Business Systems &amp; Data</dt><dd>CRM Implementation &amp; Configuration · Data Migration &amp; Cleanup · Requirements Gathering &amp; Vendor Evaluation · Workflow Automation · Reporting &amp; Analysis · Process Documentation · Agile / Scrum</dd></div>
-      <div><dt>Industries</dt><dd>Legal services · Fintech / capital markets · Education</dd></div>
+      <div><dt>Data and records</dt><dd>Data entry · verifying data against source records · finding and correcting discrepancies · data clean-up and de-duplication · record keeping · confidential records</dd></div>
+      <div><dt>Documentation and training</dt><dd>Writing step-by-step guides and job aids · knowledge base upkeep · training others</dd></div>
+      <div><dt>Customer and staff support</dt><dd>Phone and email support · first point of contact · serving the public · explaining technology in plain language</dd></div>
+      <div><dt>Systems</dt><dd>Microsoft Excel (intermediate: XLOOKUP, VLOOKUP, pivot tables, IF, SUMIF) · Word · Outlook · Microsoft 365 · Adobe Acrobat · Google Sheets · Zoho CRM · Salesforce (Trailhead) · Jira · Windows · basic Python and SQL</dd></div>
     </dl>
 
-    <h2>Certifications</h2>
-    <ul class="certs">
-      <li>Google Data Analytics Professional Certificate (Coursera)</li>
-    </ul>
+    <h2>Certification</h2>
+    <ul class="plain"><li>Google Data Analytics Professional Certificate (Coursera), January 2025</li></ul>
 
-    <h2>Projects</h2>
-    <dl class="skills projects">
-      <div><dt><a href="#accessctl">accessctl</a></dt><dd>Onboarding / offboarding automation and access review across six simulated systems.</dd></div>
+    <h2>Languages</h2>
+    <ul class="plain"><li>English (fluent) · Urdu</li></ul>
+
+    <div class="side-foot">Updated November 2026</div>
+  </aside>
+</div>
+</body>
+</html>
+d></div>
       <div><dt><a href="#site-health-monitor">site-health-monitor</a></dt><dd>Hourly uptime, TLS and SPF / DKIM / DMARC checks; live status page; change-only alerts.</dd></div>
       <div><dt><a href="#crm-migration-toolkit">crm-migration-toolkit</a></dt><dd>CSV contact cleanup and fuzzy de-duplication with an audit trail.</dd></div>
     </dl>
